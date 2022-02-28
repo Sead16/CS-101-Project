@@ -58,7 +58,19 @@ def fibonacci_rabbits(n, k):
 
 #6
 gc_content(dna_list):
-
+    greatestdnastring=""
+    greatestdnadecimal=0
+    gcindex=0
+    ggcindex=0
+    for LLDNASTRING in dna_list:
+        currentdnadecimal=((LLDNASTRING.count("G")+LLDNASTRING.count("C"))/len(LLDNASTRING))
+        if currentdnadecimal > greatestdnadecimal:
+            greatestdnadecimal=currentdnadecimal
+            greatestdnastring=LLDNASTRING
+            ggcindex=gcindex
+        gcindex=gcindex+1
+    greatestdnapercent=100*greatestdnadecimal
+    return(ggcindex,greatestdnapercent)
 
 #7 MJ
 def rna2codon(rna):

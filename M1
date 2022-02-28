@@ -82,10 +82,9 @@ def rna2codon(rna):
             return genetic_code[triplet]
         else:
             return "Invalid"
-    triplets=rna2_1codon(rna)
     codons=''
-    for i in range( 0,int( len( triplets ) / 3 ) ):
-        codons= codons + rna2_1codon(triplets[ 3*i:3*i+3 ])
+    for i in range( 0,int( len( rna ) / 3 ) ):
+        codons= codons + rna2_1codon(rna[ 3*i:3*i+3 ])
     return codons
 
 

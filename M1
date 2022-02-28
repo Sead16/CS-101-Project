@@ -1,0 +1,15 @@
+def s(dna):    
+    dna = dna.upper()
+    count_A = dna.count('A')
+    count_C = dna.count('C')
+    count_G = dna.count('G')
+    count_T = dna.count('T')
+    dict_dna = {
+        'A' : count_A ,
+        'C' : count_C ,
+        'G' : count_G ,
+        'T' : count_T
+        }
+    return dict_dna
+
+

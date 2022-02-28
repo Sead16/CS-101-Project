@@ -30,18 +30,18 @@ def dna2rna(dna):
 
 #3
 def reverse_complement(dna):
-    rna = ''
+    reverse_complement = ''
     for symbol in dna:
         if symbol == 'A':
-            rna = rna + 'T'
+            reverse_complement = reverse_complement + 'T'
         elif symbol == 'T':
-            rna = rna + 'A'
+            reverse_complement = reverse_complement + 'A'
         elif symbol == 'C':
-            rna = rna + 'G'
+            reverse_complement = reverse_complement + 'G'
         elif symbol == 'G':
-            rna = rna + 'C'
-    rna = rna[::-1]
-    return rna
+            reverse_complement = reverse_complement + 'C'
+    reverse_complement = reverse_complement[::-1]
+    return reverse_complement
 
 
 def mendels_law(hom, het, rec):

@@ -18,12 +18,12 @@ def dna2rna(dna):
     rna = ''
     for symbol in dna:
         if symbol == 'A':
-            rna = rna + 'U'
-        elif symbol == 'T':
             rna = rna + 'A'
-        elif symbol == 'C':
-            rna = rna + 'G'
+        if symbol == 'T':
+            rna = rna + 'U'
         elif symbol == 'G':
+            rna = rna + 'G'
+        elif symbol == 'C':
             rna = rna + 'C'
     return rna
 

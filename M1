@@ -28,7 +28,7 @@ def dna2rna(dna):
     return rna
 
 
-#3
+#3 MJ
 def reverse_complement(dna):
     reverse_complement = ''
     for symbol in dna:
@@ -49,7 +49,7 @@ def mendels_law(hom, het, rec):
 
 
 
-#5
+#5 MJ
 def fibonacci_rabbits(n, k):
     f1, f2 = 1, 1
     for i in range(n - 1):
@@ -60,9 +60,10 @@ def fibonacci_rabbits(n, k):
 gc_content(dna_list):
 
 
-#7
-def rna2codon(triplet):
-    genetic_code = {
+#7 MJ
+def rna2codon(rna):
+    def rna2_1codon(triplet):
+        genetic_code = {
         'UUU': 'F', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L',        'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L',
         'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 'AUG': 'M',        'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'V',
 
@@ -74,14 +75,18 @@ def rna2codon(triplet):
 
         'UGU': 'C', 'UGC': 'C', 'UGA': '*', 'UGG': 'W',        'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R',
         'AGU': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R',        'GGU': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G',
-    }
-    allowed_codons = set('ACGU')
-    triplet.upper()
-    if triplet in genetic_code:
-        return genetic_code[triplet]
-    else:
-        return "Invalid"
-
+        }
+        allowed_codons = set('ACGU')
+        triplet.upper()
+        if triplet in genetic_code:
+            return genetic_code[triplet]
+        else:
+            return "Invalid"
+    triplets=rna2_1codon(rna)
+    codons=''
+    for i in range( 0,int( len( triplets ) / 3 ) ):
+        codons= codons + rna2_1codon(triplets[ 3*i:3*i+3 ])
+    return codons
 
 
 locate_substring(dna_snippet, dna):

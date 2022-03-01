@@ -1,4 +1,4 @@
-#1 SS
+#1
 def s(dna):    
     dna = dna.upper()
     count_A = dna.count('A')
@@ -13,7 +13,7 @@ def s(dna):
         }
     return dict_dna
     
-#2 SS 
+#2    
 def dna2rna(dna):
     rna = ''
     for symbol in dna:
@@ -65,8 +65,6 @@ def mendels_law(hom, het, rec):
     i+=1
   dom=0
   i=0
-  print(list1)
-  print(list2)
   while i<hom+het+rec:
     j=0
     while j<hom+het+rec:
@@ -147,14 +145,16 @@ hamming_dist(dna1, dna2)：
 
 
 
-#10
-count_dom_phenotype(genotypes)：
+
+#10 MJ
+def count_dom_phenotype(genotypes):
+  dom_phenotype = (genotypes[0]*1+genotypes[1]*1+genotypes[2]*1+genotypes[3]*.75+genotypes[4]*.5)*2
+  return dom_phenotype
 
 
 
-#11
 source_rna(protein):
 
 
-#12
+
 splice_rna(dna, intron_list):

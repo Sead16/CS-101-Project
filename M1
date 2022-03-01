@@ -1,4 +1,4 @@
-#1
+#1 SS
 def s(dna):    
     dna = dna.upper()
     count_A = dna.count('A')
@@ -13,7 +13,7 @@ def s(dna):
         }
     return dict_dna
     
-#2    
+#2 SS 
 def dna2rna(dna):
     rna = ''
     for symbol in dna:
@@ -147,14 +147,14 @@ hamming_dist(dna1, dna2)：
 
 
 
-
+#10
 count_dom_phenotype(genotypes)：
 
 
 
-
+#11
 source_rna(protein):
 
 
-
+#12
 splice_rna(dna, intron_list):

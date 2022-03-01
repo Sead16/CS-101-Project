@@ -73,7 +73,6 @@ def mendels_law(hom, het, rec):
       j += 1
     i += 1
   return dom/(hom+het+rec)/(hom+het+rec-1)
-print(mendels_law(4,0,2))
 
 
 #5 MJ

@@ -56,7 +56,7 @@ def fibonacci_rabbits(n, k):
         f2, f1 = f1, f1 + (f2 * k)
     return f2
 
-#6
+#6 FLR
 gc_content(dna_list):
     greatestdnastring=""
     greatestdnadecimal=0
@@ -70,7 +70,8 @@ gc_content(dna_list):
             ggcindex=gcindex
         gcindex=gcindex+1
     greatestdnapercent=100*greatestdnadecimal
-    return(ggcindex,greatestdnapercent)
+    ggctuple=(ggcindex,greatestdnapercent)
+    return ggctuple
 
 #7 MJ
 def rna2codon(rna):
@@ -102,8 +103,18 @@ def rna2codon(rna):
 
 locate_substring(dna_snippet, dna):
 
-
+#9 FLR
 hamming_dist(dna1, dna2)：
+    LMindex=0
+    LMdifferencecounter=0
+    for LMcharacter in dna1:
+        if LMcharacter == dna2[LMindex]:
+            1
+        else:
+            LMdifferencecounter=LMdifferencecounter+1
+        LMindex=LMindex+1
+    return differencecounter
+    
 
 
 

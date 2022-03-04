@@ -1,4 +1,4 @@
-#1
+#1 SS
 def s(dna):    
     dna = dna.upper()
     count_A = dna.count('A')
@@ -13,7 +13,7 @@ def s(dna):
         }
     return dict_dna
     
-#2    
+#2  SS
 def dna2rna(dna):
     rna = ''
     for symbol in dna:

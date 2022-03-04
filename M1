@@ -13,6 +13,7 @@ def s(dna):
         }
     return dict_dna
     
+    
 #2  SS
 def dna2rna(dna):
     rna = ''
@@ -82,6 +83,7 @@ def fibonacci_rabbits(n, k):
         f2, f1 = f1, f1 + (f2 * k)
     return f2
 
+
 #6 FLR
 def gc_content(dna_list):
     greatestdnastring=""
@@ -98,7 +100,8 @@ def gc_content(dna_list):
     greatestdnapercent=100*greatestdnadecimal
     ggctuple=(ggcindex,greatestdnapercent)
     return ggctuple
-
+    
+    
 #7 MJ
 def rna2codon(rna):
     def rna2_1codon(triplet):
@@ -125,6 +128,7 @@ def rna2codon(rna):
     for i in range( 0,int( len( rna ) / 3 ) ):
         codons= codons + rna2_1codon(rna[ 3*i:3*i+3 ])
     return codons
+    
 
 #8 FLR
 def locate_substring(dna_snippet, dna):
@@ -142,20 +146,20 @@ def locate_substring(dna_snippet, dna):
             llq.append(llp)
         llp=llp+1
     return(llq)
+    
 
 #9 FLR
-hamming_dist(dna1, dna2)：
-    LMindex=0
-    LMdifferencecounter=0
+def hamming_dist(dna1, dna2):
+    LMindex = 0
+    LMdifferencecounter = 0
     for LMcharacter in dna1:
         if LMcharacter == dna2[LMindex]:
             1
         else:
-            LMdifferencecounter=LMdifferencecounter+1
+            LMdifferencecounter = LMdifferencecounter + 1
         LMindex=LMindex+1
-    return differencecounter
-
-
+    return LMdifferencecounter
+    
 
 #10 MJ
 def count_dom_phenotype(genotypes):

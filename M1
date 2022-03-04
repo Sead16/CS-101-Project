@@ -153,9 +153,7 @@ def hamming_dist(dna1, dna2):
     LMindex = 0
     LMdifferencecounter = 0
     for LMcharacter in dna1:
-        if LMcharacter == dna2[LMindex]:
-            1
-        else:
+        if LMcharacter != dna2[LMindex]:
             LMdifferencecounter = LMdifferencecounter + 1
         LMindex=LMindex+1
     return LMdifferencecounter

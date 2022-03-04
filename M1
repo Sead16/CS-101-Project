@@ -154,8 +154,6 @@ hamming_dist(dna1, dna2)：
             LMdifferencecounter=LMdifferencecounter+1
         LMindex=LMindex+1
     return differencecounter
-    
-
 
 
 

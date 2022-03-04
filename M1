@@ -182,18 +182,19 @@ def source_rna(protein):
 
 
 
+#12 SS & MJ
 def splice_rna(dna, intron_list):
     
     for i in range(len(intron_list)):
     
         x = locate_substring(intron_list[i], dna)
+        for j in range(len(x)):
+            dna = dna[0:x[j]] + dna[x[j] + len(intron_list[i]): len(dna)]
         
+    rna_string = dna2rna(dna)
+    protein = rna2codon(rna_string)
         
-        # slice at index
-        #dna.remove(intron_list[i])
     #onece introns are removed
     #dna_without_introns  
     
-    
-    
-    return(x)
+    return(protein)

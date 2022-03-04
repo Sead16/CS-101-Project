@@ -182,4 +182,18 @@ def source_rna(protein):
 
 
 
-splice_rna(dna, intron_list):
+def splice_rna(dna, intron_list):
+    
+    for i in range(len(intron_list)):
+    
+        x = locate_substring(intron_list[i], dna)
+        
+        
+        # slice at index
+        #dna.remove(intron_list[i])
+    #onece introns are removed
+    #dna_without_introns  
+    
+    
+    
+    return(x)

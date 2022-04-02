@@ -1,0 +1,42 @@
+#1 SS
+def find_splice(dna_motif, dna):
+    c1 = 0
+    c2 = -1 
+    c3 = -1
+    mylist = []
+    
+    for j in range(len(dna)):
+        if c1 == 0:
+            if dna[j] == dna_motif[0]:
+                mylist.append( j )
+                c1 = 1
+                c2 = 0
+        if c2 ==0:
+            if dna[j] == dna_motif[1]:
+                mylist.append( j )
+                c2 = 1
+                c3 = 0
+        if c3 ==0:
+            if dna[j] == dna_motif[2]:
+                mylist.append( j )
+                c3 = 1
+    return mylist
+
+#2 
+def shared_motif(dna_list):
+
+#3
+def get_edges(dna_dict)
+
+#4
+def assemble_genome(dna_list)
+
+#5
+def perfect_match(rna)
+
+#6
+def random_genome(dna, gc_content)
+
+#7
+def rev_palindrome(dna)
+

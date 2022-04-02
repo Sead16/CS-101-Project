@@ -21,22 +21,64 @@ def find_splice(dna_motif, dna):
                 mylist.append( j )
                 c3 = 1
     return mylist
+############################################################################
 
 #2 
 def shared_motif(dna_list):
+    count = 0
+    l1 = dna_list[0]
+    l2 = dna_list[1]
+    l3 = dna_list[2]
+    amount_a = []
+    final = []
+    for s in range(5):
+        amount = 0
+        
+        for i in range(len(l1)):
+            j = i + count + 1
+            var = l1[i:j]
+            
+            if len(var) > count:
+                for c in range(len(l2)):
+                    h = c+count+1
+                    
+                    if var == l2[c:h]:
+                        for k in range(len(l3)):
+                            f = k+count+1
+                            
+                            if var == l3[k:f]:
+                                final.append(var)
+                                amount += 1
+        amount_a.append(amount)
+        count += 1
+    zeros = 0
+    for i in range(len(amount_a)):
+        if amount_a[i]==0:
+            zeros += 1
+    
+    for i in range(zeros):
+        amount_a.remove(0)
+        
+    return final[-(amount_a[-1])]
+############################################################################
 
 #3
 def get_edges(dna_dict)
+############################################################################
 
 #4
 def assemble_genome(dna_list)
+############################################################################
 
 #5
 def perfect_match(rna)
+############################################################################
 
 #6
 def random_genome(dna, gc_content)
+############################################################################
 
 #7
 def rev_palindrome(dna)
+############################################################################
 

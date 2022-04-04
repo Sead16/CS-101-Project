@@ -62,23 +62,40 @@ def shared_motif(dna_list):
     return final[-(amount_a[-1])]
 ############################################################################
 
-#3
-def get_edges(dna_dict)
+#3 MJ
+def get_edgs(dict):
+    key_list = dict.keys()
+    list=[]
+    for i in key_list:
+        list.append(i)
+    result=[]
+    for i in range(0,len(list)):
+        for j in range(i+1,len(list)):
+            if(dict[list[i]][:3]==dict[list[j]][-3:] or dict[list[i]][-3:]==dict[list[j]][:3]):
+                result.append((list[i],list[j]))
+    return result
+    
 ############################################################################
 
-#4
-def assemble_genome(dna_list)
+#4 MJ
+def assemble_genome(dna_list):
+    def findOverlappingPair(str1,str2):
+        max = 0
+        len1 = len(str1)
+        len2 = len(str2)
+        for i in min(len1,len2):
+            if str1[i]:
+#https://www.geeksforgeeks.org/shortest-superstring-problem/
 ############################################################################
 
 #5
-def perfect_match(rna)
+#def perfect_match(rna):
 ############################################################################
 
 #6
-def random_genome(dna, gc_content)
+#def random_genome(dna, gc_content):
 ############################################################################
 
 #7
-def rev_palindrome(dna)
+#def rev_palindrome(dna):
 ############################################################################
-

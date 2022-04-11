@@ -81,7 +81,7 @@ import sys
 def assemble_genome(dna_list):
     def  min( a,  b) :
         return a if (a < b) else b
-    def  findOverlappingPair( str1,  str2) :
+    def  findOverlap( str1,  str2) :
         str = None
         max = -sys.maxsize
         len1 = len(str1)
@@ -101,7 +101,7 @@ def assemble_genome(dna_list):
                     str = str2 + str1[i:]
             i += 1
         return [max,str]
-    def  findShortestSuperstring( arr,  len) :
+    def  findShortest(arr,len) :
         while (len != 1) :
             max = -sys.maxsize
             l = 0
@@ -111,7 +111,7 @@ def assemble_genome(dna_list):
             while (i < len) :
                 j = i + 1
                 while (j < len) :
-                    [res,str] = findOverlappingPair(arr[i], arr[j])
+                    [res,str] = findOverlap(arr[i], arr[j])
                     if (max < res) :
                         max = res
                         resStr = str
@@ -126,7 +126,7 @@ def assemble_genome(dna_list):
                 arr[l] = resStr
                 arr[r] = arr[len]
         return arr[0]
-    return findShortestSuperstring(dna_list, len(dna_list))
+    return findShortest(dna_list, len(dna_list))
 dna_list=[
 "ATTAGACCTG",
 "CCTGCCGGAA",
@@ -139,7 +139,26 @@ print(assemble_genome(dna_list)=='ATTAGACCTGCCGGAATAC')
 ############################################################################
 
 #5
-#def perfect_match(rna):
+def perfect_match(rna):
+    def fact(n):
+        if n==1 or n==0:
+            return 1
+        return n*fact(n-1)
+    [a,u,c,g]=[0,0,0,0]
+    for geneome in rna:
+        if geneome.lower() == 'a':
+            a+=1
+        if geneome.lower() == 'u':
+            u+=1
+        if geneome.lower() == 'c':
+            c+=1
+        if geneome.lower() == 'g':
+            g+=1
+    if a==u and c==g:
+        return fact(a)*fact(c)
+    return 0
+x='CACUAGUGCGAU'
+print(perfect_match(x))
 ############################################################################
 
 #6

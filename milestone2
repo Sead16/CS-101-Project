@@ -63,7 +63,7 @@ def shared_motif(dna_list):
 ############################################################################
 
 #3 MJ
-def get_edgs(dict):
+def get_edges(dict):
     key_list = dict.keys()
     list=[]
     for i in key_list:
@@ -127,15 +127,7 @@ def assemble_genome(dna_list):
                 arr[r] = arr[len]
         return arr[0]
     return findShortest(dna_list, len(dna_list))
-dna_list=[
-"ATTAGACCTG",
-"CCTGCCGGAA",
-"AGACCTGCCG",
-"GCCGGAATAC"
-]
-print(assemble_genome(dna_list)=='ATTAGACCTGCCGGAATAC')
 
-#https://www.geeksforgeeks.org/shortest-superstring-problem/
 ############################################################################
 
 #5 MJ
@@ -157,14 +149,15 @@ def perfect_match(rna):
     if a==u and c==g:
         return fact(a)*fact(c)
     return 0
-x='CACUAGUGCGAU'
-print(perfect_match(x))
+
 ############################################################################
 
 #6
-#def random_genome(dna, gc_content):
+def random_genome(dna, gc_content):
+    return 0
 ############################################################################
 
 #7
-#def rev_palindrome(dna):
+def rev_palindrome(dna):
+    return 0
 ############################################################################

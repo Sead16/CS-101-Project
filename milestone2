@@ -1,26 +1,15 @@
-#1 SS
+##1 SS
 def find_splice(dna_motif, dna):
-    c1 = 0
-    c2 = -1 
-    c3 = -1
-    mylist = []
     
-    for j in range(len(dna)):
-        if c1 == 0:
-            if dna[j] == dna_motif[0]:
-                mylist.append( j )
-                c1 = 1
-                c2 = 0
-        if c2 ==0:
-            if dna[j] == dna_motif[1]:
-                mylist.append( j )
-                c2 = 1
-                c3 = 0
-        if c3 ==0:
-            if dna[j] == dna_motif[2]:
-                mylist.append( j )
-                c3 = 1
-    return mylist
+    mylist = []
+    n = len(dna_motif)
+    f = 0
+    for j in range(len(dna)):        
+        if dna[j] == dna_motif[f]:
+            mylist.append( j )
+            f += 1
+            if f >=n:
+                return mylist
 ############################################################################
 
 #2 

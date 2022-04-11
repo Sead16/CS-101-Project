@@ -138,7 +138,7 @@ print(assemble_genome(dna_list)=='ATTAGACCTGCCGGAATAC')
 #https://www.geeksforgeeks.org/shortest-superstring-problem/
 ############################################################################
 
-#5
+#5 MJ
 def perfect_match(rna):
     def fact(n):
         if n==1 or n==0:

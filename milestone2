@@ -12,43 +12,63 @@ def find_splice(dna_motif, dna):
                 return mylist
 ############################################################################
 
-#2 
+#2 SS
 def shared_motif(dna_list):
     count = 0
+    n = len(dna_list)
+    if n == 0:
+        return ''
+    if n == 1:
+        return dna_list[0]
     l1 = dna_list[0]
     l2 = dna_list[1]
-    l3 = dna_list[2]
+    if n >= 3:
+        l3 = dna_list[2]
     amount_a = []
     final = []
-    for s in range(5):
+    longest_dna = 0
+    for i in range(n):
+        test = len(dna_list[i])
+        if test > longest_dna:
+            longest_dna = test
+    shortest_dna = 999
+    for i in range(n):
+        test = len(dna_list[i])
+        if test < shortest_dna:
+            shortest_dna = test
+        if shortest_dna == 0:
+            return ''
+    for s in range(longest_dna):
         amount = 0
-        
+        var = []
         for i in range(len(l1)):
             j = i + count + 1
             var = l1[i:j]
-            
             if len(var) > count:
                 for c in range(len(l2)):
-                    h = c+count+1
-                    
+                    h = c + count + 1
                     if var == l2[c:h]:
-                        for k in range(len(l3)):
-                            f = k+count+1
-                            
-                            if var == l3[k:f]:
-                                final.append(var)
-                                amount += 1
+                        if n >= 3:
+                            for k in range(len(l3)):
+                                f = k + count + 1
+                                if var == l3[k:f]:
+                                    final.append(var)
+                                    amount += 1
+                        else:
+                            final.append(var)
+                            amount += 1
         amount_a.append(amount)
         count += 1
     zeros = 0
+    if amount_a[0] == 0:
+        return ""
     for i in range(len(amount_a)):
-        if amount_a[i]==0:
+        if amount_a[i] == 0:
             zeros += 1
-    
     for i in range(zeros):
         amount_a.remove(0)
-        
     return final[-(amount_a[-1])]
+    
 ############################################################################
 
 #3 MJ

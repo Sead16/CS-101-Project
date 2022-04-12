@@ -146,7 +146,43 @@ def random_genome(dna, gc_content):
     return 0
 ############################################################################
 
-#7
+#7 FLR
 def rev_palindrome(dna):
+    
+    def reverse_complement(dna):
+        reverse_complement = ''
+        for symbol in dna:
+            if symbol == 'A':
+                reverse_complement = reverse_complement + 'T'
+            elif symbol == 'T':
+                reverse_complement = reverse_complement + 'A'
+            elif symbol == 'C':
+                reverse_complement = reverse_complement + 'G'
+            elif symbol == 'G':
+                reverse_complement = reverse_complement + 'C'
+        reverse_complement = reverse_complement[::-1]
+        return reverse_complement
+    
+    endList=[]
+    
+    #this function works by checking every combination of positions and lengths for palindromacy
+    #it cycles through every length at one position before moving to the next position
+    
+    Pos=0
+    while Pos <= len(dna):
+        Len=0
+        while Len <= len(dna) - Pos:
+            miniString=""
+            miniIndex=0
+            while len(miniString) < Len:
+                miniString += dna[Pos+miniIndex]
+                miniIndex += 1
+            if miniString == reverse_complement(miniString) and Len >= 4 and Len <= 12:
+                endList.append((Pos,Len))
+            Len+=1        
+        Pos+=1
+        
+    return endList
     return 0
+    
 ############################################################################

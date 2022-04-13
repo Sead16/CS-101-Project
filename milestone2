@@ -161,12 +161,30 @@ def perfect_match(rna):
 
 ############################################################################
 
-#6
+#6 FR
 def random_genome(dna, gc_content):
-    return 0
+    from math import log10
+    
+    chanceList = []
+    
+    for gcValue in gc_content:
+        gcFrequency = gcValue / 2
+        atFrequency = (1 - gcValue) / 2
+        aggregateChance = 1
+        
+        for character in dna:
+            if character == "G" or character == "C":
+                aggregateChance *= gcFrequency
+            else:
+                aggregateChance *= atFrequency         
+                
+        logChance = log10(aggregateChance)
+        chanceList.append(logChance)
+    return chanceList
+    
 ############################################################################
 
-#7 FLR
+#7 FR
 def rev_palindrome(dna):
     
     def reverse_complement(dna):
@@ -203,6 +221,5 @@ def rev_palindrome(dna):
         Pos+=1
         
     return endList
-    return 0
     
 ############################################################################

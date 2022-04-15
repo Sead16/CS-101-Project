@@ -10,6 +10,8 @@ def find_splice(dna_motif, dna):
             f += 1
             if f >=n:
                 return mylist
+    return []
+    
 ############################################################################
 
 #2 SS
